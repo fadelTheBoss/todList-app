@@ -1,40 +1,8 @@
 import { useState } from "react";
-import { useTaskContext } from "../context/Context";
-import ListStatus from "./ListStatus";
+import { Content } from "./ListStatus";
 
 const TaskStatus = () => {
   const [valueOfStatus, setValueOfStatus] = useState("");
-  const { state, dispatch } = useTaskContext();
-  const item = state.items;
-  const finishedTask = (task) => task.isFinish;
-  const unfinishedTask = (task) => !task.isFinish;
-
-  let content;
-  if (valueOfStatus === "completeTask") {
-    content = (
-      <ListStatus
-        status={item}
-        filtered={finishedTask}
-        title={"la liste des taches terminées"}
-      />
-    );
-  }
-
-  if (valueOfStatus === "incompleteTask") {
-    content = (
-      <ListStatus
-        status={item}
-        filtered={unfinishedTask}
-        title={"la liste des taches non terminées"}
-      />
-    );
-  }
-
-  if (valueOfStatus === "default") {
-    content = (
-      <span className="text-xl p-3 rounded-md mb-4 ">afficher le status des taches</span>
-    );
-  }
 
   return (
     <div className="">
@@ -73,7 +41,9 @@ const TaskStatus = () => {
         </label>
       </form>
 
-      <div className="p-2 mt-6 flex flex-col gap-4">{content}</div>
+      <div className="p-2 mt-6 flex flex-col gap-4">
+        <Content value={valueOfStatus} />
+      </div>
     </div>
   );
 };
