@@ -46,24 +46,5 @@ export const taskReducer = (state, action) => {
     };
   }
 
-  if (action.type === "handleRadio") {
-    return {
-      ...state,
-      taskStatus: [...state.items].filter((task) => {
-        if (action.payload === "completeTask") {
-          return task.isFinish === true;
-        }
-
-        if (action.payload === "incompleteTask") {
-          return task.isFinish !== true;
-        }
-
-        if (action.payload === "allTask") {
-          return task;
-        }
-      }),
-    };
-  }
-
   return state;
 };
