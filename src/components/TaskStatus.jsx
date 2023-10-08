@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Content } from "./ListStatus";
 
 const TaskStatus = () => {
-  const [valueOfStatus, setValueOfStatus] = useState("");
+  const [valueOfStatus, setValueOfStatus] = useState("default");
 
   return (
     <div className="">

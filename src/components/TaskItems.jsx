@@ -24,7 +24,7 @@ const TaskItems = () => {
            />
           <input
             type="text"
-            className={`${styles.inputBox} ${task.isFinish?"line-through text-red-500":""} flex-1 text-xl`}
+            className={`${styles.inputBox} ${task.isFinish?"line-through decoration-2 decoration-red-300 ":""} flex-1 text-xl`}
             defaultValue={task.name}
             readOnly={task.isReadOnly}
             onChange={(e) => dispatch({

@@ -47,8 +47,8 @@ export const Content = ({ value }) => {
 
   if (value === "default") {
     content = (
-      <span className="text-xl p-3 rounded-md mb-4 ">
-        afficher le status des taches
+      <span className="text-x p-3 rounded-md mb-4 ">
+        le status des taches s'affiche ici... 
       </span>
     );
   }
